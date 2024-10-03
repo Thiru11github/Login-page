@@ -1,1 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Necurity Solutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="Logo.png" alt="Necurity Solutions Logo" class="logo">
+        <h1>Necurity Solutions Network Security Private Ltd</h1>
+        <h2>Login</h2>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+        </form>
+        <a href="signup.html">Don't have an account? Sign Up</a>
+        <div class="footer">
+            &copy; 2024 Necurity Solutions Network Security Private Ltd. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
 
